@@ -88,8 +88,10 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 
 ![Diagrama de Classes](Diagramas/Diagrama_classe.png)
 
+## Diagrama de Pacotes 
 
-## Diagrama de Pacotes
+![Diagrama de Pacotes](Diagramas/diagrama-de-pacote.png)
+
 
 ## Requisitos do Sistema
 

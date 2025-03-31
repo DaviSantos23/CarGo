@@ -21,10 +21,12 @@
   
   .ofertas-container {
     display: flex;
+    flex-wrap: wrap;
     background-color: #000;
     color: white;
-    padding: 30px 40px;
-    gap: 40px;
+    padding: 30px 20px;
+    gap: 20px;
+    box-sizing: border-box;
   }
   
   .filtros {
@@ -33,8 +35,10 @@
     padding: 20px;
     border-radius: 10px;
     min-width: 220px;
+    flex: 1 1 250px;
+    box-sizing: border-box;
+    max-width: 280px;
   }
-  
   .filtros .marcas {
     display: flex;
     flex-wrap: wrap;
@@ -52,18 +56,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    flex: 1;
+    flex: 3 1 600px;
+    box-sizing: border-box;
   }
   
   .card-oferta {
     background-color: #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   
   .card-oferta img {
     width: 100%;
-    height: 150px;
+    height: auto;
     object-fit: cover;
   }
   
@@ -99,29 +107,71 @@
     margin: 2px 0;
   }
 
+  @media (max-width: 768px) {
+    .ofertas-container {
+      flex-direction: column;
+    }
+  
+    .filtros {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .lista-ofertas {
+      grid-template-columns: 1fr;
+    }
+  }
+
+/* Filtros Deslizantes */
+
+  .filtros-deslizantes {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .filtros-deslizantes label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+  }
+  
+  .filtros-deslizantes input[type=range] {
+    width: 100%;
+    appearance: none;
+    height: 4px;
+    background: #ccc;
+    outline: none;
+    border-radius: 4px;
+  }
+  
+  .output-text {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #333;
+  }
 
   /* Style HomePage */
 
-  body, html {
+  html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    overflow: hidden;
-    height: 100vh;
-}
+    background-color: #000;
+    overflow-x: hidden;
+  }
 
 header {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px 40px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 header .logo {
@@ -138,96 +188,4 @@ header nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-
-}
-
-.hero {
-    background-image: url('../imagens/background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin: 0;
-}
-
-.hero p {
-    font-size: 16px;
-    margin: 10px 0 20px;
-    max-width: 500px;
-}
-
-.search-box {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.hero input {
-    padding: 10px;
-    width: 230px;
-    border: none;
-    border-radius: 5px;
-}
-
-.hero button {
-    padding: 10px 20px;
-    background-color: coral;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.services {
-    background-color: #111;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    padding: 10px 40px;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.service-box {
-    flex: 1 1 20%;
-    background-color: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    min-width: 200px;
-}
-
-.service-box h3 {
-    margin-bottom: 10px;
-    color: coral;
-}
-
-.service-box a {
-    display: inline-block;
-    margin-top: 10px;
-    color: white;
-    text-decoration: underline;
-}
-
-.icon {
-    font-size: 36px;
-    color: coral;
 }

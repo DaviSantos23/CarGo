@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ofertas - carGo</title>
+  <title>carGO - Ofertas</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../CSS/styleOfertas.css">
 </head>
@@ -13,9 +13,9 @@
       <div class="logo"><strong>carGo</strong></div>
       <nav>
         <a href="landingPage.html">Início</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Contatos</a>
-        <a href="#">Login</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contato.html">Contatos</a>
+        <a href="login.html">Login</a>
       </nav>
     </header>
     <div class="ofertas-title">
@@ -36,7 +36,40 @@
         <img src="https://cdn.iconscout.com/icon/free/png-256/fiat-9-202837.png" alt="Fiat" height="32">
         <img src="https://cdn.iconscout.com/icon/free/png-256/chevrolet-16-202818.png" alt="Chevrolet" height="32">
 
+        <!---->
+
+        <img src="https://cdn.iconscout.com/icon/free/png-256/audi-6-202721.png" alt="Audi" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/bmw-8-202854.png" alt="BMW" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/jeep-6-202858.png" alt="Jeep" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/mercedes-10-202877.png" alt="Mercedes" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/volkswagen-202869.png" alt="Volkswagen" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/fiat-9-202837.png" alt="Fiat" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/chevrolet-16-202818.png" alt="Chevrolet" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/nissan-11-202860.png" alt="Nissan" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/toyota-11-202898.png" alt="Toyota" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/honda-7-202858.png" alt="Honda" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/land-rover-3-202860.png" alt="Land Rover" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/porsche-8-202867.png" alt="Porsche" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/jaguar-5-202845.png" alt="Jaguar" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/peugeot-202875.png" alt="Peugeot" height="32">
+        
+
       </div>
+
+      <div class="filtros-deslizantes">
+        <label for="valor-range">Valor</label>
+        <input type="range" id="valor-range" min="48000" max="998000" step="1000" oninput="document.getElementById('valor-output').textContent = formatarMoeda(this.value)">
+        <div class="output-text">
+          <span id="valor-output">R$ 0.000</span> — R$ 998.000
+        </div>
+      
+        <label for="km-range">Quilometragem</label>
+        <input type="range" id="km-range" min="0" max="145000" step="500" oninput="document.getElementById('km-output').textContent = this.value + ' km'">
+        <div class="output-text">
+          <span id="km-output">0 km</span> — 100.000 km
+        </div>
+      </div>
+
     </aside>
 
     <section class="lista-ofertas">
@@ -84,7 +117,7 @@
       </div>
 
       <div class="card-oferta">
-        <img src="../imagens/gol.png" alt="hillux">
+        <img src="../imagens/gol.png" alt="gol">
         <div class="info">
           <h3>Volkswagen Gol 1.6</h3>
           <p class="preco">R$ 120,00 /dia</p>
@@ -94,16 +127,17 @@
       </div>
 
       <div class="card-oferta">
-        <img src="../imagens/gol.png" alt="hillux">
+        <img src="../imagens/compass.png" alt="compass">
         <div class="info">
-          <h3>Volkswagen Gol 1.6</h3>
-          <p class="preco">R$ 120,00 /dia</p>
-          <p class="detalhes"><i class="bi bi-calendar"></i> 2019/2019 &nbsp; <i class="bi bi-speedometer2"></i> 11.500 km</p>
-          <p class="local"><i class="bi bi-geo-alt"></i> Belo Horizonte, MG</p>
+          <h3>Jeep Compass</h3>
+          <p class="preco">R$ 280,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2024/2025 &nbsp; <i class="bi bi-speedometer2"></i> 1.500 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Conselheiro Lafaiete, MG</p>
         </div>
       </div>
 
     </section>
   </main>
+  <script src="../JS/script.js"></script>
 </body>
 </html>

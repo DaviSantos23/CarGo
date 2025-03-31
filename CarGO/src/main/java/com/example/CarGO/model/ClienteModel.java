@@ -16,6 +16,8 @@ public class ClienteModel {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private UUID id;
 
+    private String email;
+    private String senha;
     private String nome;
     private String endereco;
     private String rg;
@@ -29,6 +31,13 @@ public class ClienteModel {
     }
 public String getNome() {
     return nome;
+}
+
+public String getEmail() {
+    return email;
+}
+public String getSenha() {
+    return senha;
 }
 
 public String getProfissao() {
@@ -53,6 +62,12 @@ public float getSalario() {
     return salario;
 }
 
+public void setEmail(String email) {
+    this.email = email;
+}
+public void setSenha(String senha) {
+    this.senha = senha;
+}
 public void setEntidades(String entidades) {
     this.entidades = entidades;
 }

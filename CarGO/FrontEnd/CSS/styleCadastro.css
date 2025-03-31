@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../imagens/back-cadastro.jpg'); /* Adicione sua imagem */
+    background-image: url('../imagens/back-cadastro.jpg'); 
     background-size: cover;
     background-position: center;
     filter: blur(8px);

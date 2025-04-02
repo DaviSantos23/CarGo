@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>carGO - Ofertas</title>
+  <link rel="icon" type="image/png" href="../imagens/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../CSS/styleOfertas.css">
+</head>
+<body>
+  <div class="ofertas-hero">
+    <header>
+      <div class="logo"><strong>carGo</strong></div>
+      <nav>
+        <a href="landingPage.html">Início</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contato.html">Contatos</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+    <div class="ofertas-title">
+      <h1>Ofertas</h1>
+    </div>
+  </div>
+
+  <main class="ofertas-container">
+    <aside class="filtros">
+      <h2>Filtros</h2>
+      <p>Marcas Populares</p>
+      <div class="marcas">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/audi-6-202721.png" alt="Audi" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/bmw-8-202854.png" alt="BMW" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/jeep-6-202858.png" alt="Jeep" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/mercedes-10-202877.png" alt="Mercedes" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/volkswagen-202869.png" alt="Volkswagen" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/fiat-9-202837.png" alt="Fiat" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/chevrolet-16-202818.png" alt="Chevrolet" height="32">
+
+        <!---->
+
+        <img src="https://cdn.iconscout.com/icon/free/png-256/audi-6-202721.png" alt="Audi" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/bmw-8-202854.png" alt="BMW" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/jeep-6-202858.png" alt="Jeep" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/mercedes-10-202877.png" alt="Mercedes" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/volkswagen-202869.png" alt="Volkswagen" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/fiat-9-202837.png" alt="Fiat" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/chevrolet-16-202818.png" alt="Chevrolet" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/nissan-11-202860.png" alt="Nissan" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/toyota-11-202898.png" alt="Toyota" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/honda-7-202858.png" alt="Honda" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/land-rover-3-202860.png" alt="Land Rover" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/porsche-8-202867.png" alt="Porsche" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/jaguar-5-202845.png" alt="Jaguar" height="32">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/peugeot-202875.png" alt="Peugeot" height="32">
+        
+
+      </div>
+
+      <div class="filtros-deslizantes">
+        <label for="valor-range">Valor</label>
+        <input type="range" id="valor-range" min="48000" max="998000" step="1000" oninput="document.getElementById('valor-output').textContent = formatarMoeda(this.value)">
+        <div class="output-text">
+          <span id="valor-output">R$ 0.000</span> — R$ 998.000
+        </div>
+      
+        <label for="km-range">Quilometragem</label>
+        <input type="range" id="km-range" min="0" max="145000" step="500" oninput="document.getElementById('km-output').textContent = this.value + ' km'">
+        <div class="output-text">
+          <span id="km-output">0 km</span> — 100.000 km
+        </div>
+      </div>
+
+    </aside>
+
+    <section class="lista-ofertas">
+      <div class="card-oferta">
+        <img src="../imagens/corolla.png" alt="COROLLA">
+        <div class="info">
+          <span class="badge red">Blindado</span>
+          <h3>Toyota Corolla XEI </h3>
+          <p class="preco">R$ 290,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2024/2025 &nbsp; <i class="bi bi-speedometer2"></i> 3.100 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Conselheiro Lafaiete, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/civic.png" alt="CIVIC">
+        <div class="info">
+          <h3>Honda Civic Hibrido 2.0 ou similar*</h3>
+          <p class="preco">R$ 270,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2025/2025 &nbsp; <i class="bi bi-speedometer2"></i> 1.000 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Belo Horizonte, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/gtizao.png" alt="GTI">
+        <div class="info">
+            <span class="badge red">Esportivo</span>
+          <h3>Volkswagen Golf GTI 2.0 Turbo</h3>
+          <p class="preco">R$ 340,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2017/2018 &nbsp; <i class="bi bi-speedometer2"></i> 15.600 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Belo Horizonte, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/hillux.png" alt="hillux">
+        <div class="info">
+            <span class="badge red">Utilitário</span>
+          <h3>Toyota Hilux 2.8 Turbo Diesel</h3>
+          <p class="preco">R$ 540,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2022/2023 &nbsp; <i class="bi bi-speedometer2"></i> 8.500 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Belo Horizonte, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/gol.png" alt="gol">
+        <div class="info">
+          <h3>Volkswagen Gol 1.6</h3>
+          <p class="preco">R$ 120,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2019/2019 &nbsp; <i class="bi bi-speedometer2"></i> 11.500 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Belo Horizonte, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/compass.png" alt="compass">
+        <div class="info">
+          <h3>Jeep Compass</h3>
+          <p class="preco">R$ 280,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2024/2025 &nbsp; <i class="bi bi-speedometer2"></i> 1.500 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Conselheiro Lafaiete, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/tucson.png" alt="tucson">
+        <div class="info">
+          <span class="badge red">Blindado</span>
+          <h3>Hyundai Tucson </h3>
+          <p class="preco">R$ 390,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2024/2025 &nbsp; <i class="bi bi-speedometer2"></i> 1.500 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> Conselheiro Lafaiete, MG</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/camry.png" alt="camry">
+        <div class="info">
+          <h3>Toyota Camry Hibrido</h3>
+          <p class="preco">R$ 340,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2025/2025 &nbsp; <i class="bi bi-speedometer2"></i> 500 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/model s.png" alt="tesla">
+        <div class="info">
+          <span class="badge red">Elétrico</span>
+          <h3>Tesla Model S</h3>
+          <p class="preco">R$ 770,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2025/2025 &nbsp; <i class="bi bi-speedometer2"></i> 230 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/macan.png" alt="macan">
+        <div class="info">
+          <span class="badge red">Blindado</span>
+          <h3>Porsche Macan Turbo</h3>
+          <p class="preco">R$ 599,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2020/201 &nbsp; <i class="bi bi-speedometer2"></i> 13.230 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/m3.png" alt="m3">
+        <div class="info">
+          <span class="badge red">Esportivo</span>
+          <h3>BMW M3</h3>
+          <p class="preco">R$ 839,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2016/2017 &nbsp; <i class="bi bi-speedometer2"></i> 7.330 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+
+      <div class="card-oferta">
+        <img src="../imagens/CLA.png" alt="cla">
+        <div class="info">
+          <span class="badge red">Esportivo</span>
+          <h3>Mercedes-Benz CLA AMG</h3>
+          <p class="preco">R$ 339,00 /dia</p>
+          <p class="detalhes"><i class="bi bi-calendar"></i> 2016/2016 &nbsp; <i class="bi bi-speedometer2"></i> 9.530 km</p>
+          <p class="local"><i class="bi bi-geo-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+  <script src="../JS/script.js"></script>
+</body>
+</html>

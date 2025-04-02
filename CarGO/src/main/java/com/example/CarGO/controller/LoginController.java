@@ -18,7 +18,7 @@ import com.example.CarGO.model.ClienteModel;
 import com.example.CarGO.repository.ClienteRepository;
 import com.example.CarGO.service.CookieService;
 
-import ch.qos.logback.core.joran.spi.HttpUtil.RequestMethod;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;

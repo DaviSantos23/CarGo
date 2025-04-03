@@ -13,12 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Por favor, preencha todos os campos.");
         return;
       }
-  
+
+      const usuarioLogado = localStorage.getItem("usuarioLogado");
+
       const novoPedido = {
         veiculo,
         retirada,
         devolucao,
-        pagamento
+        pagamento,
+        email: usuarioLogado
       };
   
       const pedidosSalvos = JSON.parse(localStorage.getItem("pedidosUsuario")) || [];

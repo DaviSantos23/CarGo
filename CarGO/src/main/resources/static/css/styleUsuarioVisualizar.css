@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    color: coral;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    color: white;
+  }
+  
+  .menu a {
+    margin-left: 20px;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: coral;
+  }
+  
+  .banner {
+    background-image: url('../imagens/banner-visualizar.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+  }
+  
+  .banner h1 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  #listaPedidos {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .botoes-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto;
+  }
+  
+  .btn-acao {
+    background-color: coral;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+  }
+  
+  .btn-acao:hover {
+    background-color: #ff7f50;
+  }
+
+
+  .pedido-card {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px rgba(255, 122, 61, 0.3);
+  }
+  
+  .pedido-card h3 {
+    margin-bottom: 10px;
+    color: coral;
+  }
+  
+  .pedido-card p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+  
+  footer {
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Botões Painel */
+
+  .btn-acao {
+    background-color: coral;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-acao:hover {
+    background-color: #ff7f50;
+  }
+
+  .table-input {
+    width: 100%;
+    padding: 8px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  table input[type="date"],
+table select {
+  width: 90%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+table input[disabled] {
+  background-color: #555;
+  color: #ccc;
+}

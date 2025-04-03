@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #1a1a1a, #222);
+    padding: 15px 30px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    color: coral;
+  }
+  
+  .menu a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .menu a:hover {
+    color: coral;
+  }
+  
+  .banner {
+    background-image: url('../imagens/banner-financeiroPedidos.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 5px black;
+  }
+  
+  .banner h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  main {
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: center;
+  }
+  
+  thead {
+    background-color: #333;
+  }
+  
+  tfoot {
+    background-color: #222;
+  }
+  
+  footer {
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+  }
+  
+  .btn-aprovar {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-aprovar:hover {
+    background-color: #218838;
+  }
+  
+  .btn-recusar {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-recusar:hover {
+    background-color: #c82333;
+  }

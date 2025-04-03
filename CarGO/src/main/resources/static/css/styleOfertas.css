@@ -175,7 +175,9 @@ header {
 }
 
 header .logo {
-    font-size: 20px;
+    font-size: 25px;
+    color: coral;
+
 }
 
 header nav {
@@ -187,5 +189,5 @@ header nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
 }

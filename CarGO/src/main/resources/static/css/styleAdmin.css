@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: white;
+  }
+  
+  .header-banner {
+    background-image: url('../imagens/back-admin.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 140px 40px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .header-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .header-banner h1 {
+    position: relative;
+    font-size: 42px;
+    margin: 0;
+    z-index: 1;
+    color: white;
+  }
+  
+  .header-banner p {
+    position: relative;
+    z-index: 1;
+    color: #ccc;
+    margin-top: 10px;
+  }
+  
+  /* Conteúdo principal */
+  .content {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #181818; 
+    min-height: 100vh;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .card i {
+    font-size: 40px;
+    color: coral;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .card:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-5px);
+  }
+
+  /* Rodapé */
+footer {
+    background-color: #101010;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    border-top: 1px solid #222;
+  }

@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .header {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff7b47;
+  }
+  
+  .logo span {
+    color: #fff;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-list li a:hover {
+    color: #ff7b47;
+  }
+  
+  .banner-financeiro {
+    background: url('../imagens/back-financeiro.jpg') center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .banner-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .banner-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .banner-content p {
+    font-size: 1rem;
+    color: #ddd;
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem auto;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 0 15px rgba(255, 123, 71, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    background-color: #2a2a2a;
+  }
+  
+  .card i {
+    font-size: 2.5rem;
+    color: #ff7b47;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #111;
+    color: #aaa;
+    font-size: 0.875rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+  }
+  

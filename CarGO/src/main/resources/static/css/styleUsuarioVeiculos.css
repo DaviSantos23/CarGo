@@ -1,0 +1,137 @@
+/* veiculos.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+  }
+  
+  .header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: coral;
+  }
+  
+  .header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header nav ul li {
+    white-space: nowrap;
+  }
+  
+  .header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .header nav ul li a:hover {
+    color: coral;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  
+  .banner {
+    background: url('../imagens/back-usuario-veiculo.jpg') center/cover no-repeat;
+    height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 4px #000;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .banner h1 {
+    font-size: 32px;
+    font-weight: bold;
+
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+  
+  .vehicle-card {
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    padding: 16px;
+    width: 200px;
+    box-shadow: 0 0 12px rgba(66, 65, 64, 0.3);
+    text-align: center;
+  }
+  
+  .vehicle-card img {
+    max-width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+  
+  .vehicle-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .vehicle-card p {
+    margin: 4px 0;
+    color: #ccc;
+    font-size: 14px;
+  }
+
+  .menu a {
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #ff7a3d;
+    transform: scale(1.1);
+  }
+  footer {
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  

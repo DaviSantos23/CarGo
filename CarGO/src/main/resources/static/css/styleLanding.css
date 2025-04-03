@@ -22,7 +22,8 @@ header {
 }
 
 header .logo {
-    font-size: 20px;
+    font-size: 25px;
+    color: coral;
 }
 
 header nav {
@@ -34,7 +35,7 @@ header nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .main-container {
@@ -60,6 +61,7 @@ header nav a {
 .hero h1 {
     font-size: 42px;
     margin: 0;
+    
 }
 
 .hero p {

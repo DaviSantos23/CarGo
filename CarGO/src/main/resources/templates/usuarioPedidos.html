@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>carGo - Criar Pedido</title>
+  <link rel="icon" type="image/png" href="../imagens/favicon.png">
+
+  <link rel="stylesheet" href="../CSS/styleUsuarioPedidos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+      <div class="logo">car<span>Go</span></div>
+      <nav class="menu">
+        <a href="sistemaUsuario.html" class="menu-btn"><i class="fas fa-home"></i></a>
+        <a href="landingPage.html" class="menu-btn"><i class="fas fa-sign-out-alt"></i></a>
+      </nav>
+    </header>
+  
+    <section class="banner">
+      <h1>Crie um novo pedido de aluguel</h1>
+    </section>
+  
+    <main class="formulario-pedido">
+      <form id="formPedido">
+        <div class="form-group">
+          <label for="veiculo">Veículo</label>
+          <select id="veiculo" required>
+            <option value="">Selecione</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="dataRetirada">Data de Retirada</label>
+          <input type="date" id="dataRetirada" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="dataDevolucao">Data de Devolução</label>
+          <input type="date" id="dataDevolucao" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="formaPagamento">Forma de Pagamento</label>
+          <select id="formaPagamento" required>
+            <option value="">Selecione</option>
+            <option value="credito">Cartão de Crédito</option>
+            <option value="debito">Cartão de Débito</option>
+            <option value="boleto">Boleto</option>
+            <option value="pix">Pix</option>
+          </select>
+        </div>
+  
+        <button type="submit" class="btn">Criar Pedido</button>
+      </form>
+    </main>
+  
+    <footer>
+      <p>&copy; 2025 carGo. Todos os direitos reservados.</p>
+    </footer>
+  
+  <script src="../JS/usuario-pedidos.js"></script>
+</body>
+</html>

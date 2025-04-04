@@ -84,5 +84,48 @@ public class LoginController {
         return "ofertas";
     }
 
+    @GetMapping("/sistemaUsuario")
+    public String sistemaUsuario(){
+        return "sistemausuario";
+    }
+
+    @GetMapping("/usuarioPedidos")
+    public String usuarioPedidos(){
+        return "usuarioPedidos";
+    }
+
+    @GetMapping("/usuarioVeículos")
+    public String usuarioVeículos(){
+        return "usuarioVeículos";
+    }
+    
+    @GetMapping("/usuarioVisualizar")
+    public String usuarioVisualizar(){
+        return "usuarioVisualizar";
+    }
+
+    @GetMapping("/sistemaAdmin")
+    public String sistemaAdmin(){
+        return "sistemaAdmin";
+    }
+
+    @GetMapping("/adminContratos")
+    public String adminContratos(){
+        return "adminContratos";
+    }
+
+    @GetMapping("/adminPedidos")
+    public String adminPedidos(){
+        return "adminPedidos";
+    }
+
+    @GetMapping("/adminVeiculos")
+    public String adminVeiculos(){
+        return "adminVeiculos";
+    }
+    
+
+
+
     
 }

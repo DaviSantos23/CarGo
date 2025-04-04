@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class LoginInterceptor implements HandlerInterceptor {
     
      
-    @Override
+    /*@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException{
         
         if(CookieService.getCookie(request, "clienteId") != null){
@@ -24,5 +24,5 @@ public class LoginInterceptor implements HandlerInterceptor {
         response.sendRedirect("/login");
         return false;
         
-    }
+    }*/
 }

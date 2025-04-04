@@ -123,6 +123,16 @@ public class LoginController {
     public String adminVeiculos(){
         return "adminVeiculos";
     }
+
+    @GetMapping("/sistemaFinanceiro")
+    public String sistemaFinanceiro(){
+        return "sistemaFinanceiro";
+    }
+
+    @GetMapping("/financeiroPedidos")
+    public String financeiroPedidos(){
+        return "financeiroPedidos";
+    }
     
 
 

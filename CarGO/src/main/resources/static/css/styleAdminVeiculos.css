@@ -111,7 +111,7 @@ footer {
     padding: 30px;
     gap: 20px;
   }
-  
+
   /* Modal */
   .modal {
     display: none;
@@ -185,13 +185,6 @@ footer {
     color: white;
   }
 
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    gap: 20px;
-  }
 
   .vehicle-card {
     background-color: #1e1e1e;

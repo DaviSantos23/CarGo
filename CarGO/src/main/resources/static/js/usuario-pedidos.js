@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("formPedido");
   
     form.addEventListener("submit", (e) => {
@@ -53,4 +53,73 @@ const dataDevolucaoInput = document.getElementById("dataDevolucao");
 
 dataRetiradaInput.addEventListener("change", () => {
   dataDevolucaoInput.min = dataRetiradaInput.value;
+});*/
+
+function cadastrarPedido(event){
+  event.preventDefault();
+
+  const pedido = {
+    veiculo: document.getElementById("veiculo").value,
+    dtRetirada: document.getElementById("dataRetirada").value,
+    dtDevolucao: document.getElementById("dataDevolucao").value,
+    formaPagamento: document.getElementById("formaPagamento").value
+  };
+
+  fetch("http://localhost:8080/pedidos", {
+    method: "POST",
+    headers: {
+        "Content-type": "application/json"
+    },
+    body: JSON.stringify(pedido)
+  })
+  .then(response => {
+    if(!response.ok){
+      throw new Error("Erro ao cadastrar pedido")
+    }
+    return response.json();
+  })
+  .then(data => {
+    alert("Cadastro realizado com sucesso!");
+    
+  })
+  .catch(error => {
+    console.error("Erro: ", error);
+    alert("Erro ao cadastrar. Verifique os dados e tente novamente.");
+  });
+
+}
+
+function carregarVeiculos() {
+  fetch("http://localhost:8080/veiculos") // Ajuste a URL se necessário
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erro ao carregar veículos");
+      }
+      return response.json();
+    })
+    .then(veiculos => {
+      const selectVeiculo = document.getElementById("veiculo");
+      selectVeiculo.innerHTML = '<option value="">Selecione um veículo</option>'; // Limpa e adiciona opção padrão
+
+      veiculos.forEach(veiculo => {
+        const option = document.createElement("option");
+        option.value = veiculo.placa; // O valor será a placa do veículo
+        option.textContent = `${veiculo.modelo} - ${veiculo.placa}`; // Exibir modelo + placa
+        selectVeiculo.appendChild(option);
+      });
+    })
+    .catch(error => {
+      console.error("Erro ao carregar veículos:", error);
+      alert("Erro ao carregar veículos. Tente novamente mais tarde.");
+    });
+}
+
+// Chama a função ao carregar a página
+document.addEventListener("DOMContentLoaded", carregarVeiculos);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", cadastrarPedido);
+
 });

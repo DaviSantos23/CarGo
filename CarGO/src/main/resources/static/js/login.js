@@ -80,6 +80,12 @@ function login(event) {
   .then(data => {
       alert("Login realizado com sucesso!");
       localStorage.setItem("usuario", JSON.stringify(data)); // Salva os dados no navegador
+
+      /*if (data.role === "ADMIN") {
+        window.location.href = "/sistemaAdmin"; // Página exclusiva do Admin
+    } else {
+        window.location.href = "/sistemaUsuario"; // Página comum para usuários normais
+    }*/
       window.location.href = "/sistemaUsuario"; // Redireciona para a página principal após login
   })
   .catch(error => {

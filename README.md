@@ -140,15 +140,11 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
     <td><img src="Sistema/adm3.png" width="300"></td>
   </tr>
   <tr>
-    <td><img src="Sistema/adm4.png" width="300"></td>
+      <td><img src="Sistema/adm7.png" width="300"></td>
     <td><img src="Sistema/adm5.png" width="300"></td>
     <td><img src="Sistema/adm6.png" width="300"></td>
   </tr>
-  <tr>
-    <td><img src="Sistema/adm7.png" width="300"></td>
-    <td></td>
-    <td></td>
-  </tr>
+
 </table>
 
 ---

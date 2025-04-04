@@ -18,7 +18,6 @@ document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
   updateCarousel();
 });
 
-// Rotação automática a cada 5 segundos
 setInterval(() => {
   currentIndex = (currentIndex + 1) % totalSlides;
   updateCarousel();

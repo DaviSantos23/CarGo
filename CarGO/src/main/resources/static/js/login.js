@@ -4,7 +4,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
   const email = document.getElementById("email").value;
   const senha = document.getElementById("senha").value;
 
-  // Logins fixos
   const loginsFixos = [
     {
       email: "admin@cargo.com",
@@ -18,14 +17,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
     }
   ];
 
-  // Verifica se é login fixo
   const loginFixo = loginsFixos.find(user => user.email === email && user.senha === senha);
   if (loginFixo) {
     redirecionarParaPainel(loginFixo.tipo);
     return;
   }
 
-  // Verifica usuários cadastrados
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
   const usuario = usuarios.find(u => u.email === email && u.senha === senha);
 

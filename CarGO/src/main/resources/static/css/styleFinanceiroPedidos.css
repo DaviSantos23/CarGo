@@ -47,14 +47,22 @@
     justify-content: center;
     align-items: center;
     text-shadow: 2px 2px 5px black;
+    flex-direction: column; 
   }
-  
+
   .banner h1 {
     font-size: 36px;
     font-weight: bold;
     color: white;
+    margin-bottom: 6px;
   }
   
+  .banner p {
+    font-size: 18px;
+
+    margin: 0;
+  }
+
   main {
     max-width: 1600px;
     margin: 40px auto;
@@ -137,3 +145,4 @@
   .btn-recusar:hover {
     background-color: #c82333;
   }
+

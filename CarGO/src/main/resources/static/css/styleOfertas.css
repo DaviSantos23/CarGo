@@ -1,9 +1,8 @@
-
 .ofertas-hero {
     background-image: url('../imagens/back-ofertas.jpg');
     background-size: cover;
     background-position: center;
-    height: 30vh;
+    height: 415px;
     position: relative;
     color: white;
   }
@@ -161,33 +160,40 @@
     overflow-x: hidden;
   }
 
-header {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px 40px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-header .logo {
-    font-size: 25px;
-    color: coral;
-
-}
-
-header nav {
+  .main-header {
     display: flex;
-    gap: 20px;
-}
-
-header nav a {
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  .main-header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: coral;
+  }
+  
+  .main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-header nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 15px;
-}
+    font-size: 16px;
+  }
+  
+  .main-header nav ul li a:hover {
+    color: coral;
+  }

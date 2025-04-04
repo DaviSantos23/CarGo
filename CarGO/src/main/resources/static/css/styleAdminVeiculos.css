@@ -8,55 +8,97 @@ body {
   }
   
   .header {
-    background-color: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.8);
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
   
   .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #fff;
-  }
-  
-  .logo span {
-    color: #ff7a3d;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
+    font-size: 24px;
     font-weight: bold;
   }
+
   
-  .main-content {
-    text-align: center;
-    padding: 40px 20px;
-  }
+.logo span {
+  color: coral;
+}
+
+.menu a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  color: coral;
+}
   
-  .main-content h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
+.banner {
+  background-image: url('../imagens/back-adminCadastro.jpg'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 350px; 
+  padding-top: 120px; 
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 18px;
+}
+
   
-  #btnAdicionar {
-    background-color: #ff7a3d;
-    border: none;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.main-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+footer {
+  background-color: #0c0c0c;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+  
+#btnAdicionar {
+  background-color: #ff7a3d;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  display: block;
+  margin: 20px auto;
+}
   
   #btnAdicionar:hover {
     background-color: #ff6220;
@@ -155,7 +197,7 @@ body {
     background-color: #1e1e1e;
     border-radius: 10px;
     padding: 20px;
-    width: 250px;
+    width: 20%; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     color: #fff;
@@ -167,8 +209,6 @@ body {
     border-radius: 8px;
     margin-bottom: 10px;
   }
-
-  /* Footer */
 
   
 html, body {
@@ -194,9 +234,11 @@ html, body {
 
 
   footer {
-    background-color: #111;
-    color: #fff;
-    padding: 20px 0;
+    background-color: #0c0c0c;
+    color: white;
     text-align: center;
+    padding: 15px 0;
+    font-size: 15px;
+    position: static;
+    margin-top: 40px;
   }
-  

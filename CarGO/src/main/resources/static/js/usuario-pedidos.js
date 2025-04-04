@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     });
   
-    // Preencher o select de veículos com base no localStorage
     const selectVeiculo = document.getElementById("veiculo");
     const veiculos = JSON.parse(localStorage.getItem("veiculosCadastrados")) || [];
     const modelosAdicionados = new Set();
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // Evita que a data de devolução seja anterior à data de retirada
 const dataRetiradaInput = document.getElementById("dataRetirada");
 const dataDevolucaoInput = document.getElementById("dataDevolucao");
 

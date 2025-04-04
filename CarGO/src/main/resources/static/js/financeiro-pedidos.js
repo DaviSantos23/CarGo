@@ -25,9 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
   
-    const pedidosAprovados = pedidos.filter(p => p.status === "Aprovado");
-  
-    if (pedidosAprovados.length === 0) {
+    if (pedidos.length === 0) {
       lista.innerHTML = "<p style='text-align:center;'>Nenhum pedido encontrado.</p>";
       return;
     }
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <th style="padding: 12px; border: 1px solid #444;">Profissão</th>
           <th style="padding: 12px; border: 1px solid #444;">Salário</th>
           <th style="padding: 12px; border: 1px solid #444;">Veículo</th>
-          <th style="padding: 12px; border: 1px solid #444;">Valor Aluguel</th>
+          <th style="padding: 12px; border: 1px solid #444;">Valor Diária</th>
           <th style="padding: 12px; border: 1px solid #444;">Retirada</th>
           <th style="padding: 12px; border: 1px solid #444;">Devolução</th>
           <th style="padding: 12px; border: 1px solid #444;">Pagamento</th>
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </tr>
       </thead>
       <tbody>
-        ${pedidosAprovados.map((pedido, index) => {
+        ${pedidos.map((pedido, index) => {
           const usuario = usuarios.find(u => u.email === pedido.email) || {};
           return `
           <tr data-index="${index}" style="text-align: center;">
@@ -85,13 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const confirmar = confirm("Deseja aprovar este pedido?");
         if (!confirmar) return;
   
-        const pedido = pedidosAprovados[index];
+        const pedido = pedidos[index];
         const pedidosFinanceiro = JSON.parse(localStorage.getItem("pedidosFinanceiro")) || [];
         pedidosFinanceiro.push(pedido);
         localStorage.setItem("pedidosFinanceiro", JSON.stringify(pedidosFinanceiro));
   
-        // Remover da lista atual
-        pedidos.splice(pedidos.findIndex(p => JSON.stringify(p) === JSON.stringify(pedido)), 1);
+        pedidos.splice(index, 1);
         localStorage.setItem("pedidosUsuario", JSON.stringify(pedidos));
         location.reload();
       });
@@ -103,16 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const confirmar = confirm("Deseja recusar este pedido?");
         if (!confirmar) return;
   
-        const pedido = pedidosAprovados[index];
+        const pedido = pedidos[index];
         pedido.status = "Reprovado";
+  
         const pedidosReprovados = JSON.parse(localStorage.getItem("pedidosReprovados")) || [];
         pedidosReprovados.push(pedido);
         localStorage.setItem("pedidosReprovados", JSON.stringify(pedidosReprovados));
   
-        pedidos.splice(pedidos.findIndex(p => JSON.stringify(p) === JSON.stringify(pedido)), 1);
+        pedidos.splice(index, 1);
         localStorage.setItem("pedidosUsuario", JSON.stringify(pedidos));
         location.reload();
       });
     });
   });
-  

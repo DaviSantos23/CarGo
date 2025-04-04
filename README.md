@@ -1,6 +1,6 @@
 # CarGo
 
-![CarGo](Imagens/carGO.gif)
+![CarGo](Imagens/carGO.png)
 
 O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel de automóveis de forma eficiente e segura. O sistema permite que usuários individuais e agentes realizem diversas operações relacionadas aos aluguéis de veículos, incluindo pedidos, cancelamentos e modificações.
 
@@ -9,7 +9,7 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 ### Usuário 
 
 1. **Cadastro:** 
-   - Registro de novo usuário, armazenando informações pessoais (Nome, RG, CPF, Endereço, Profissão) 
+   - Registro de novo usuário, armazenando informações pessoais (Nome, RG, CPF, Endereço, Profissão, Data de nascimento, Endereço, E-mail, Senha, Entidade Empregadora e Salário) 
    
 2. **Login:** 
    - Autenticação de usuários por meio de credenciais (nome de usuário e senha).
@@ -30,11 +30,8 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 
 ### Administrador 
 1. **Analisar Pedido:** 
-   - Avaliar a viabilidade do contrato considerando os requisitos do pedido.
-   
-2. **Modificar Pedido:** 
-   - Realizar ajustes em pedidos pendentes, especialmente para adequação contratual.
-   
+   - Avaliar se o pedido passou pela análsie do sistema financeiro, e então, aprovar ou não o aluguel. 
+
 3. **Conceder Contrato:** 
    - Formalizar pedidos aprovados e garantir que o aluguel será realizado.
 
@@ -44,19 +41,15 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 5. **Editar os Automóveis**
     - Realizar a edição dos dados dos automóveis e seus respectivos dados.
 
+6. **Excluir os Automóveis**
+    - Realizar a exclusão dos dados dos automóveis.
+
 ---
 
 ### Gerente Financeiro 
 
 1. **Analisar Pedido:** 
     - Avaliar a capacidade financeira do cliente para a concessão de crédito.
-    
-2. **Conceder Crédito:** 
-    - Autorizar a formalização de contratos de aluguel que dependam de financiamento.
-    
-2. **Analisar Pedido:** 
-    - Faz a analise ao final do pedido. 
-
 ---
 
 ## Histórias de Usuário - CarGO
@@ -88,10 +81,9 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 
 ![Diagrama de Classes](Diagramas/Diagrama_classe.png)
 
-## Diagrama de Pacotes 
 
+## Diagrama de Pacotes
 ![Diagrama de Pacotes](Diagramas/diagrama-de-pacote.png)
-
 
 ## Requisitos do Sistema
 
@@ -100,11 +92,10 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 - Clientes devem fornecer informações como **RG, CPF, Nome, Endereço, Profissão, Entidade Empregadora e Renda (até 3 registros)**.
 
 ### Gerenciamento de Automóveis
-- Registro de informações sobre os veículos, incluindo **matrícula, ano, marca, modelo e placa**.
+- Registro de informações sobre os veículos, incluindo ** ano, modelo, valor e local**.
 - Associação do automóvel a contratos de aluguel.
 
 ### Contratos e Análise Financeira
-- O aluguel pode estar vinculado a um **contrato de crédito** fornecido por um banco agente.
 - Somente pedidos com parecer financeiro positivo podem ser finalizados.
 
 ### Infraestrutura do Sistema
@@ -120,3 +111,11 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 | **Banco de Dados** | PostgreSQL L |
 | **Autenticação** | JWT |
 | **Infraestrutura** | Servidores em Cloud (AWS, Azure ou Google Cloud) |
+
+## Imagens do sistema 
+![Sistema](Sistema/1.png)
+![Sistema](Sistema/2.png)
+![Sistema](Sistema/3.png)
+![Sistema](Sistema/4.png)
+![Sistema](Sistema/5.png)
+

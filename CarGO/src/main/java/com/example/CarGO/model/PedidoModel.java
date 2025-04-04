@@ -1,9 +1,13 @@
 package com.example.CarGO.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -23,19 +27,21 @@ public class PedidoModel {
     private UUID id;
    
     //@JoinColumn(name = "veiculo_id", nullable = false) 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "veiculo_id", nullable = false)
     private VeiculosModel veiculo;
 
-    private Timestamp dtRetirada;
-    private Timestamp dtDevolucao;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    private LocalDateTime dtRetirada;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    private LocalDateTime dtDevolucao;
     private String formaPagamento;
 
 
-    public Timestamp getDtDevolucao() {
+    public LocalDateTime getDtDevolucao() {
         return dtDevolucao;
     }
-    public Timestamp getDtRetirada() {
+    public LocalDateTime getDtRetirada() {
         return dtRetirada;
     }
     public String getFormaPagamento() {
@@ -47,10 +53,10 @@ public class PedidoModel {
     public VeiculosModel getVeiculo() {
         return veiculo;
     }
-    public void setDtDevolucao(Timestamp dtDevolucao) {
+    public void setDtDevolucao(LocalDateTime dtDevolucao) {
         this.dtDevolucao = dtDevolucao;
     }
-    public void setDtRetirada(Timestamp dtRetirada) {
+    public void setDtRetirada(LocalDateTime dtRetirada) {
         this.dtRetirada = dtRetirada;
     }
     public void setFormaPagamento(String formaPagamento) {

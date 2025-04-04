@@ -18,8 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.CarGO.dto.PedidoDto;
 import com.example.CarGO.model.PedidoModel;
+import com.example.CarGO.model.VeiculosModel;
 import com.example.CarGO.repository.PedidoRepository;
+import com.example.CarGO.repository.VeiculosRepository;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 
 @RestController
@@ -28,10 +31,19 @@ public class PedidoController {
     @Autowired
     PedidoRepository pedidoRepository;
 
+    @Autowired
+    VeiculosRepository veiculosRepository;
+
     @PostMapping("/pedidos")
     public ResponseEntity<PedidoModel> criarPedido(@RequestBody @Valid PedidoDto pedidoDto){
+        Optional<VeiculosModel> veiculo = veiculosRepository.findByPlaca(pedidoDto.placaVeiculo());
+        if (pedidoDto.placaVeiculo() != null) {
+            veiculo = Optional.ofNullable(veiculosRepository.findByPlaca(pedidoDto.placaVeiculo())
+                    .orElseThrow(() -> new EntityNotFoundException("Caminhão com placa " + pedidoDto.placaVeiculo() + " não encontrado.")));
+        }
         var pedidoModel = new PedidoModel();
         BeanUtils.copyProperties(pedidoDto, pedidoModel);
+        pedidoModel.setVeiculo(veiculo.get());
         return ResponseEntity.status(HttpStatus.OK).body(pedidoRepository.save(pedidoModel));
     }
 

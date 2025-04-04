@@ -2,7 +2,7 @@
 
 ![CarGo](Imagens/carGo.png)
 
-O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel de automóveis de forma eficiente e segura. O sistema permite que usuários individuais e agentes realizem diversas operações relacionadas aos aluguéis de veículos, incluindo pedidos, cancelamentos e modificações.
+O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel de automóveis de alto padrão, tendo uma forma eficiente e segura. O sistema permite que usuários individuais e agentes realizem diversas operações relacionadas aos aluguéis de veículos, incluindo pedidos, cancelamentos e modificações.
 
 ## Funcionalidades Principais
 

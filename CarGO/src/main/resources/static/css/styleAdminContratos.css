@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    color: coral;
+  }
+  
+  .menu a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .menu a:hover {
+    color: coral;
+  }
+  
+  /* BANNER */
+  .banner {
+    background-image: url('../imagens/banner-adminContratos.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 80px 0 20px 0;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .banner p {
+    font-size: 18px;
+  }
+  
+  /* CONTAINER DE CARDS */
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cards-contrato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card-contrato {
+    background-image: url('../imagens/back-cardContrato.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .card-contrato::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+    border-radius: 12px;
+  }
+  
+  .card-contrato * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card-contrato h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #ff7a3d;
+  }
+  
+  .card-contrato p {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  /* BOTÃO ASSINAR */
+  .btn-assinar {
+    display: block;
+    margin: 15px auto 0 auto;
+    padding: 10px 20px;
+    background-color: #ff7a3d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-assinar:hover:not(:disabled) {
+    background-color: #e86526;
+  }
+  
+  .btn-assinar i {
+    margin-right: 8px;
+  }
+  
+  /* FOOTER */
+  footer {
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 15px;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    .menu {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+  
+    .banner {
+      height: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .banner h1 {
+      font-size: 28px;
+    }
+  
+    .banner p {
+      font-size: 16px;
+    }
+  
+    .container {
+      padding: 10px;
+      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cards-contrato {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 120px;
+    }
+  
+    .card-contrato {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .card-contrato h3 {
+      font-size: 18px;
+    }
+  
+    .card-contrato p {
+      font-size: 14px;
+    }
+  
+    .btn-assinar {
+      width: 100%;
+      font-size: 16px;
+    }
+  
+    footer {
+      font-size: 14px;
+      padding: 12px 0;
+      margin-top: 20px;
+    }
+  }
+  

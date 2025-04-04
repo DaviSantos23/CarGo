@@ -19,14 +19,11 @@ document.querySelector(".carousel-btn.prev").addEventListener("click", () => {
   updateCarousel();
 });
 
-// Auto rotation every 5 seconds
 setInterval(() => {
   currentIndex = (currentIndex + 1) % totalSlides;
   updateCarousel();
 }, 5000);
 
-// Resize handler in case window changes size
 window.addEventListener("resize", updateCarousel);
 
-// Initialize
 updateCarousel();

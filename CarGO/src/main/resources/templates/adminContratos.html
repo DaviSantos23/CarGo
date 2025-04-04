@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>carGo - Contratos</title>
+  <link rel="icon" type="image/png" href="../imagens/favicon.png" />
+  <link rel="stylesheet" href="../CSS/styleAdminContratos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">car<span>Go</span></div>
+    <nav class="menu">
+      <a href="sistemaAdmin.html" title="Início"><i class="fas fa-home"></i></a>
+      <a href="landingPage.html" title="Sair"><i class="fas fa-sign-out-alt"></i></a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>Contratos</h1>
+    <p>Visualize e gerencie os contratos de aluguel aprovados!</p>
+  </section>
+
+  <main class="container">
+    <div id="listaContratos" class="cards-contrato">
+      <!-- Card modelo -->
+      <div class="card-contrato modelo" style="display: none">
+        <h3 class="iniciais">--</h3>
+        <p><strong>RG:</strong> <span class="rg"></span></p>
+        <p><strong>CPF:</strong> <span class="cpf"></span></p>
+        <p><strong>Endereço:</strong> <span class="endereco"></span></p>
+        <p><strong>Profissão:</strong> <span class="profissao"></span></p>
+        <p><strong>Entidade:</strong> <span class="entidade"></span></p>
+        <p><strong>Rendimento Auferido:</strong> <span class="salario"></span></p>
+        <p><strong>Veículo:</strong> <span class="veiculo"></span></p>
+        <button class="btn-assinar">
+          <i class="fas fa-pen"></i> Assinar
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 carGo. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../JS/admin-contratos.js"></script>
+</body>
+</html>

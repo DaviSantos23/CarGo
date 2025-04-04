@@ -107,10 +107,9 @@ O **CarGo** é uma plataforma web projetada para gerenciar o processo de aluguel
 | Tecnologia | Descrição |
 |------------|-------------|
 | **Backend** | Java (Spring Boot)  |
-| **Frontend** | HTML5 |
+| **Frontend** | HTML5, CSS, JS|
 | **Banco de Dados** | PostgreSQL L |
 | **Autenticação** | JWT |
-| **Infraestrutura** | Servidores em Cloud (AWS, Azure ou Google Cloud) |
 
 ## Imagens do sistema 
 > ⚠️ **Observação:** Todos os dados exibidos nas telas abaixo são **fictícios**, utilizados apenas para fins de demonstração.

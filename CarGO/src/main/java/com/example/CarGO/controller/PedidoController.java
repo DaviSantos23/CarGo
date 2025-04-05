@@ -36,10 +36,10 @@ public class PedidoController {
 
     @PostMapping("/pedidos")
     public ResponseEntity<PedidoModel> criarPedido(@RequestBody @Valid PedidoDto pedidoDto){
-        Optional<VeiculosModel> veiculo = veiculosRepository.findByPlaca(pedidoDto.placaVeiculo());
-        if (pedidoDto.placaVeiculo() != null) {
-            veiculo = Optional.ofNullable(veiculosRepository.findByPlaca(pedidoDto.placaVeiculo())
-                    .orElseThrow(() -> new EntityNotFoundException("Caminhão com placa " + pedidoDto.placaVeiculo() + " não encontrado.")));
+        Optional<VeiculosModel> veiculo = veiculosRepository.findByPlaca(pedidoDto.veiculo());
+        if (pedidoDto.veiculo() != null) {
+            veiculo = Optional.ofNullable(veiculosRepository.findByPlaca(pedidoDto.veiculo())
+                    .orElseThrow(() -> new EntityNotFoundException("Caminhão com placa " + pedidoDto.veiculo() + " não encontrado.")));
         }
         var pedidoModel = new PedidoModel();
         BeanUtils.copyProperties(pedidoDto, pedidoModel);

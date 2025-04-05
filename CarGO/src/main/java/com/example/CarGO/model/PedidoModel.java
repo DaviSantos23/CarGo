@@ -1,6 +1,7 @@
 package com.example.CarGO.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -27,21 +28,21 @@ public class PedidoModel {
     private UUID id;
    
     //@JoinColumn(name = "veiculo_id", nullable = false) 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "veiculo_id", nullable = false)
     private VeiculosModel veiculo;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDateTime dtRetirada;
+    private LocalDate dtRetirada;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDateTime dtDevolucao;
+    private LocalDate dtDevolucao;
     private String formaPagamento;
 
 
-    public LocalDateTime getDtDevolucao() {
+    public LocalDate getDtDevolucao() {
         return dtDevolucao;
     }
-    public LocalDateTime getDtRetirada() {
+    public LocalDate getDtRetirada() {
         return dtRetirada;
     }
     public String getFormaPagamento() {
@@ -53,10 +54,10 @@ public class PedidoModel {
     public VeiculosModel getVeiculo() {
         return veiculo;
     }
-    public void setDtDevolucao(LocalDateTime dtDevolucao) {
+    public void setDtDevolucao(LocalDate dtDevolucao) {
         this.dtDevolucao = dtDevolucao;
     }
-    public void setDtRetirada(LocalDateTime dtRetirada) {
+    public void setDtRetirada(LocalDate dtRetirada) {
         this.dtRetirada = dtRetirada;
     }
     public void setFormaPagamento(String formaPagamento) {

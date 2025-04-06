@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 */
 
-alert("TESTE JAVASCRIPT");
+//alert("TESTE JAVASCRIPT");
 
 function carregarPedidos() {
   fetch("http://localhost:8080/pedidos")
@@ -175,9 +175,9 @@ function exibirPedidos(pedidos) {
     card.classList.add("vehicle-card");
 
     card.innerHTML = `
-      <h3>${pedido.veiculo}</h3>
-      <p><strong>Data Retirada:</strong> ${pedido.drRetirada}</p>
-      <p><strong>Data Devolução:</strong> ${pedido.drDevolucao}</p>
+      <h3>${pedido.veiculo.modelo}</h3>
+      <p><strong>Data Retirada:</strong> ${pedido.dtRetirada}</p>
+      <p><strong>Data Devolução:</strong> ${pedido.dtDevolucao}</p>
       <p><strong>Forma Pagamento:</strong> ${pedido.formaPagamento}</p>
     `;
 

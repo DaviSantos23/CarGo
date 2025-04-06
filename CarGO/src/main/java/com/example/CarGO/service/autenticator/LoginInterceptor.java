@@ -1,14 +1,7 @@
 package com.example.CarGO.service.autenticator;
 
-import java.io.IOException;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import com.example.CarGO.service.CookieService;
-
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class LoginInterceptor implements HandlerInterceptor {

@@ -170,19 +170,105 @@ function exibirPedidos(pedidos) {
   const container = document.getElementById("cardsContainer");
   container.innerHTML = ""; // Limpa os cards antigos
 
+  /*document.querySelectorAll(".btn-cancelar").forEach(button => {
+    button.addEventListener("click", () => {
+      const index = button.getAttribute("data-index");
+    });
+  });*/
+
+
+
   pedidos.forEach(pedido => {
     const card = document.createElement("div");
     card.classList.add("vehicle-card");
 
+
     card.innerHTML = `
+      
       <h3>${pedido.veiculo.modelo}</h3>
       <p><strong>Data Retirada:</strong> ${pedido.dtRetirada}</p>
       <p><strong>Data Devolução:</strong> ${pedido.dtDevolucao}</p>
       <p><strong>Forma Pagamento:</strong> ${pedido.formaPagamento}</p>
       <p><strong>Status:</strong> ${pedido.status}</p>
+      <div style="margin-top: 10px; display: flex; gap: 10px;">
+      <button class="btn-editar" data-id="${pedido.id}">Editar</button>
+      <button class="btn-cancelar" data-id="${pedido.id}">Cancelar</button>
+    </div>
+      
     `;
 
     container.appendChild(card);
+
+// Ações dos botões
+card.querySelector(".btn-cancelar").addEventListener("click", () => {
+  const confirmar = confirm("Deseja cancelar esse pedido?");
+  if (!confirmar) return;
+
+  fetch(`http://localhost:8080/pedidos/${pedido.id}`, {
+    method: "DELETE"
+  })
+    .then(response => {
+      if (!response.ok) throw new Error("Erro ao cancelar");
+      alert("Pedido cancelado.");
+      carregarPedidos();
+    })
+    .catch(error => {
+      console.error(error);
+      alert("Erro ao cancelar pedido.");
+    });
+});
+
+card.querySelector(".btn-editar").addEventListener("click", () => {
+  card.innerHTML = `
+    <h3>${pedido.veiculo.modelo}</h3>
+    <p><strong>Data Retirada:</strong> <input type="date" value="${pedido.dtRetirada}" class="input-retirada"></p>
+    <p><strong>Data Devolução:</strong> <input type="date" value="${pedido.dtDevolucao}" class="input-devolucao"></p>
+    <p><strong>Forma Pagamento:</strong> 
+      <select class="input-pagamento">
+        <option value="credito" ${pedido.formaPagamento === "credito" ? "selected" : ""}>Crédito</option>
+        <option value="debito" ${pedido.formaPagamento === "debito" ? "selected" : ""}>Débito</option>
+        <option value="boleto" ${pedido.formaPagamento === "boleto" ? "selected" : ""}>Boleto</option>
+        <option value="pix" ${pedido.formaPagamento === "pix" ? "selected" : ""}>Pix</option>
+      </select>
+    </p>
+    <p><strong>Status:</strong> ${pedido.status}</p>
+    <div style="margin-top: 10px;">
+      <button class="btn-salvar" data-id="${pedido.id}">Salvar</button>
+      <button class="btn-cancelar-edicao">Cancelar</button>
+    </div>
+  `;
+
+  card.querySelector(".btn-salvar").addEventListener("click", () => {
+    const dtRetirada = card.querySelector(".input-retirada").value;
+    const dtDevolucao = card.querySelector(".input-devolucao").value;
+    const formaPagamento = card.querySelector(".input-pagamento").value;
+
+    fetch(`http://localhost:8080/pedidos/${pedido.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        veiculo: pedido.veiculo.modelo,
+        dtRetirada: dtRetirada,
+        dtDevolucao: dtDevolucao,
+        formaPagamento: formaPagamento
+      })
+    })
+      .then(response => {
+        if (!response.ok) throw new Error("Erro ao editar");
+        alert("Pedido atualizado com sucesso!");
+        carregarPedidos();
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Erro ao editar pedido.");
+      });
+  });
+
+  card.querySelector(".btn-cancelar-edicao").addEventListener("click", () => {
+    carregarPedidos(); // recarrega pra voltar ao estado normal
+  });
+});
+
   });
 }
 

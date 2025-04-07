@@ -105,7 +105,7 @@ function carregarPedidos() {
       return response.json();
     })
     .then(pedidos => {
-      const pendentes = pedidos.filter(p => p.status === "VALIDAdo_FINANCEIRO");
+      const pendentes = pedidos.filter(p => p.status === "VALIDADO_FINANCEIRO");
       exibirPedidos(pendentes); // Exibir os veículos na tela
     })
     .catch(error => {
@@ -142,7 +142,7 @@ document.querySelectorAll(".btn-validar").forEach(button => {
     const confirmar = confirm("Deseja validar este pedido?");
     if (!confirmar) return;
 
-    fetch(`http://localhost:8080/pedidos/${pedidoId}/validarFinanceiro`, {
+    fetch(`http://localhost:8080/pedidos/${pedidoId}/validarAdmin`, {
       method: "PUT"
     })
       .then(response => {

@@ -3,8 +3,12 @@ package com.example.CarGO.model;
 
 import java.time.LocalDate;
 import java.util.UUID;
+
+import com.example.CarGO.enums.StatusPedido;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,7 +34,13 @@ public class PedidoModel {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dtDevolucao;
     private String formaPagamento;
+    
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status = StatusPedido.AGUARDANDO_VALIDACAO_FINANCEIRO;
 
+    public StatusPedido getStatus() {
+        return status;
+    }
 
     public LocalDate getDtDevolucao() {
         return dtDevolucao;
@@ -47,6 +57,11 @@ public class PedidoModel {
     public VeiculosModel getVeiculo() {
         return veiculo;
     }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
     public void setDtDevolucao(LocalDate dtDevolucao) {
         this.dtDevolucao = dtDevolucao;
     }

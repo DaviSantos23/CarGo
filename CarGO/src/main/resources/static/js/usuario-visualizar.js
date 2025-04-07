@@ -179,6 +179,7 @@ function exibirPedidos(pedidos) {
       <p><strong>Data Retirada:</strong> ${pedido.drRetirada}</p>
       <p><strong>Data Devolução:</strong> ${pedido.drDevolucao}</p>
       <p><strong>Forma Pagamento:</strong> ${pedido.formaPagamento}</p>
+      <p><strong>Forma Pagamento:</strong> ${pedido.status}</p>
     `;
 
     container.appendChild(card);

@@ -123,7 +123,8 @@
         return response.json();
       })
       .then(pedidos => {
-        exibirPedidos(pedidos); // Exibir os veículos na tela
+        const pendentes = pedidos.filter(p => p.status === "AGUARDANDO_VALIDACAO_FINANCEIRO");
+        exibirPedidos(pendentes); // Exibir os veículos na tela
       })
       .catch(error => {
         console.error("Erro:", error);
@@ -145,10 +146,36 @@
         <p><strong>Data Devolução:</strong> ${pedido.dtDevolucao}</p>
         <p><strong>Forma Pagamento:</strong> ${pedido.formaPagamento}</p>
         <p><strong>Status:</strong> ${pedido.status}</p>
+        <button class="btn-validar" data-id="${pedido.id}">Validar Pedido</button>
+
       `;
   
       container.appendChild(card);
     });
+
+    // Adicionar eventos aos botões de validação
+  document.querySelectorAll(".btn-validar").forEach(button => {
+    button.addEventListener("click", () => {
+      const pedidoId = button.getAttribute("data-id");
+      const confirmar = confirm("Deseja validar este pedido?");
+      if (!confirmar) return;
+
+      fetch(`http://localhost:8080/pedidos/${pedidoId}/validarFinanceiro`, {
+        method: "PUT"
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erro ao validar pedido");
+          }
+          alert("Pedido validado com sucesso!");
+          carregarPedidos(); // Atualiza a lista
+        })
+        .catch(error => {
+          console.error("Erro:", error);
+          alert("Erro ao validar pedido.");
+        });
+    });
+  });
   }
   
   document.addEventListener("DOMContentLoaded", function () {

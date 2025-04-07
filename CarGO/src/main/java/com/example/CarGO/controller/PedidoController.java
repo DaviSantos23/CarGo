@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.CarGO.dto.PedidoDto;
+import com.example.CarGO.enums.StatusPedido;
 import com.example.CarGO.model.PedidoModel;
 import com.example.CarGO.model.VeiculosModel;
 import com.example.CarGO.repository.PedidoRepository;
@@ -44,6 +45,7 @@ public class PedidoController {
         var pedidoModel = new PedidoModel();
         BeanUtils.copyProperties(pedidoDto, pedidoModel);
         pedidoModel.setVeiculo(veiculo.get());
+        pedidoModel.setStatus(StatusPedido.AGUARDANDO_VALIDACAO_FINANCEIRO);
         return ResponseEntity.status(HttpStatus.OK).body(pedidoRepository.save(pedidoModel));
     }
 
@@ -73,4 +75,31 @@ public class PedidoController {
         return ResponseEntity.status(HttpStatus.OK).body("Pedido deletado");
 
     }
+
+    @PutMapping("/pedidos/{id}/validarFinanceiro")
+    public ResponseEntity<PedidoModel> validarFinanceiro(@PathVariable UUID id) {
+    Optional<PedidoModel> optionalPedido = pedidoRepository.findById(id);
+    if (optionalPedido.isEmpty()) {
+        return ResponseEntity.notFound().build();
+    }
+
+    PedidoModel pedido = optionalPedido.get();
+    pedido.setStatus(StatusPedido.VALIDADO_FINANCEIRO);
+    pedidoRepository.save(pedido);
+    return ResponseEntity.ok(pedido);
+}
+
+@PutMapping("/pedidos/{id}/validarAdmin")
+    public ResponseEntity<PedidoModel> validarAdmin(@PathVariable UUID id) {
+    Optional<PedidoModel> optionalPedido = pedidoRepository.findById(id);
+    if (optionalPedido.isEmpty()) {
+        return ResponseEntity.notFound().build();
+    }
+
+    PedidoModel pedido = optionalPedido.get();
+    pedido.setStatus(StatusPedido.VALIDADO_ADMIN);
+    pedidoRepository.save(pedido);
+    return ResponseEntity.ok(pedido);
+}
+
 }

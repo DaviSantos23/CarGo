@@ -25,7 +25,7 @@ import jakarta.validation.Valid;
 @RestController
 public class ClienteController {
     
-    @Autowired  
+    @Autowired
     ClienteRepository clienteRepository;
 
     @PostMapping("/clientes")

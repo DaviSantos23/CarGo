@@ -25,7 +25,8 @@ import jakarta.validation.Valid;
 @RestController
 public class ClienteController {
     
-    @Autowired
+    @Autowired  
+
     ClienteRepository clienteRepository;
 
     @PostMapping("/clientes")
@@ -40,7 +41,7 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.OK).body(clienteRepository.findAll());
     }
 
-    @PutMapping("/clientes/{id}")
+    @PutMapping("/clientes/{id}") 
     public ResponseEntity<Object> atualizarCliente(@PathVariable(value="id") UUID id, @RequestBody @Valid ClienteDto clienteDto){
         Optional<ClienteModel> cliente = clienteRepository.findById(id);
         if(cliente.isEmpty()){
@@ -51,7 +52,7 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.OK).body(clienteRepository.save(clienteModel));
     }
 
-    @DeleteMapping("/clientes/{id}")
+    @DeleteMapping("/clientes/{id}") 
     public ResponseEntity<Object> deletarCliente(@PathVariable(value="id") UUID id){
         Optional<ClienteModel> cliente = clienteRepository.findById(id);
         if(cliente.isEmpty()){

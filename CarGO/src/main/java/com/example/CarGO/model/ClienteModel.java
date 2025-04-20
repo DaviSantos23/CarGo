@@ -8,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+@Entity   
 @Table(name = "CLIENTES")
 public class ClienteModel {
     
@@ -16,9 +16,9 @@ public class ClienteModel {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private UUID id;
 
-    private String email;
-    private String senha;
-    private String nome;
+    private String email;    
+    private String senha;   
+    private String nome;    
     private String endereco;
     private String rg;
     private String cpf;

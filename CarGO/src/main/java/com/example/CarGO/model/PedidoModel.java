@@ -27,15 +27,15 @@ public class PedidoModel {
     //@JoinColumn(name = "veiculo_id", nullable = false) 
     @ManyToOne
     @JoinColumn(name = "veiculo_id", nullable = false)
-    private VeiculosModel veiculo;
+    private VeiculosModel veiculo;    
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dtRetirada;
+    private LocalDate dtRetirada; 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dtDevolucao;
+    private LocalDate dtDevolucao; 
     private String formaPagamento;
     
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)  
     private StatusPedido status = StatusPedido.AGUARDANDO_VALIDACAO_FINANCEIRO;
 
     public StatusPedido getStatus() {

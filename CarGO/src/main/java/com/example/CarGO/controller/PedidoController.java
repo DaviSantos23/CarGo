@@ -35,7 +35,7 @@ public class PedidoController {
     @Autowired
     VeiculosRepository veiculosRepository;
 
-    @PostMapping("/pedidos")
+    @PostMapping("/pedidos") 
     public ResponseEntity<PedidoModel> criarPedido(@RequestBody @Valid PedidoDto pedidoDto){
         Optional<VeiculosModel> veiculo = veiculosRepository.findByPlaca(pedidoDto.veiculo());
         if (pedidoDto.veiculo() != null) {
@@ -57,7 +57,7 @@ public class PedidoController {
     @PutMapping("/pedidos/{id}")
     public ResponseEntity<Object> atualizarPedido(@PathVariable(value="id") UUID id, @RequestBody @Valid PedidoDto pedidoDto){
         Optional<PedidoModel> pedido = pedidoRepository.findById(id);
-        if(pedido.isEmpty()){
+        if(pedido.isEmpty()){ 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pedido não encontrado");
         }
         var pedidoModel = pedido.get();
@@ -76,7 +76,7 @@ public class PedidoController {
 
     }
 
-    @PutMapping("/pedidos/{id}/validarFinanceiro")
+    @PutMapping("/pedidos/{id}/validarFinanceiro") 
     public ResponseEntity<PedidoModel> validarFinanceiro(@PathVariable UUID id) {
     Optional<PedidoModel> optionalPedido = pedidoRepository.findById(id);
     if (optionalPedido.isEmpty()) {

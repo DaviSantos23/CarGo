@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
-@Controller
+@Controller 
 public class LoginController {
     
     @Autowired
@@ -38,7 +38,7 @@ public class LoginController {
     @ResponseBody
     public ResponseEntity<?> loginCliente(@RequestBody ClienteModel clienteModel, Model model, HttpServletResponse response) throws UnsupportedEncodingException{
         ClienteModel clienteLogado = this.cr.login(clienteModel.getEmail(), clienteModel.getSenha());
-        if(clienteLogado != null){
+        if(clienteLogado != null){ 
             CookieService.setCookie(response, "clienteId", String.valueOf(clienteLogado.getId()), 10000);
             CookieService.setCookie(response, "nomeCliente", String.valueOf(clienteLogado.getNome()), 10000);
             return ResponseEntity.ok(clienteLogado);   
@@ -55,7 +55,7 @@ public class LoginController {
 
     @RequestMapping(value = "/cadastro", method = org.springframework.web.bind.annotation.RequestMethod.POST)
     public String cadastrarCliente(@Valid ClienteModel clienteModel, BindingResult result){
-        if(result.hasErrors()){
+        if(result.hasErrors()){ 
             return "redirect:/cadastro";
         }
         cr.save(clienteModel);

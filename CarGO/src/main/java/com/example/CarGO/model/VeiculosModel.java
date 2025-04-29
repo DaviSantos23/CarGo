@@ -21,8 +21,8 @@ public class VeiculosModel {
     private int ano;
     private String local;
 
-    @Column(nullable = false, unique = true)
-    private String placa;
+    @Column(nullable = false, unique = true)    
+    private String placa;    
     
 
     public String getPlaca() {

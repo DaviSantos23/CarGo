@@ -32,9 +32,9 @@ public class VeiculosController {
         return ResponseEntity.status(HttpStatus.OK).body(veiculosRepository.save(veiculoModel));
     }
 
-    @GetMapping("/veiculos")
+    @GetMapping("/veiculos") 
     public ResponseEntity<List<VeiculosModel>> listarVeiculos(){
-        return ResponseEntity.status(HttpStatus.OK).body(veiculosRepository.findAll());
+        return ResponseEntity.status(HttpStatus.OK).body (veiculosRepository.findAll()); 
     }
 
     @PutMapping("/veiculos/{id}")
